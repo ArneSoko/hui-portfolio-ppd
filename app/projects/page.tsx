@@ -3,51 +3,29 @@ import React from 'react';
 import FakeTerminalWindow from '../components/about/FakeTerminalWindow';
 import Preview from '../components/projects/Preview';
 import Project from '../components/projects/Project';
+import * as projects from '@/public/projects.json'
 
-const projects = [
-  {
-    title: 'Weather App',
-    mockup: '/mockups/weatherAppMock.png',
-    live: 'https://weather-app.paytonpierce.dev',
-    code: 'https://github.com/paytonjewell/react-weather-app-v2'
-  },
-  {
-    title: 'Portfolio Template',
-    mockup: '/mockups/portfolioTemplateMock.png',
-    live: 'https://reactportfoliotemplate.paytonpierce.dev/',
-    code: 'https://github.com/paytonjewell/ReactPortfolioTemplate'
-  },
-  {
-    title: 'Alarm Clock',
-    mockup: '/mockups/clockMock.png',
-    live: 'https://darkmodeclock.paytonpierce.dev/',
-    code: 'https://github.com/paytonjewell/Analog-Clock-With-Darkmode-Toggle'
-  },
-  {
-    title: 'To-Do List',
-    mockup: '/mockups/todoMock.png',
-    live: 'https://todolist.paytonpierce.dev/',
-    code: 'https://github.com/paytonjewell/To-Do-List'
-  },
-]
 
 const Portfolio = () => {
   return (
     <div className="text-center">
-      <p>Open Source Contributions:</p>
-      <Link className="link link-primary" href="https://github.com/danielcranney/profileme-dev/pull/34">ProfileMe.dev</Link>
       <div className="flex flex-wrap items-start mb-10">
       {projects.map((project, index) => (
-        <div key={index} className="md:w-1/2 flex flex-col items-center justify-center">
-          <img src={project.mockup} />
-          <h1 className="text-3xl mb-2">{project.title}</h1>
-          <div className="flex gap-2">
-            <Link href={project.live} target='_blank' className="btn btn-secondary">Live</Link>
-            <Link href={project.code} target='_blank' className="btn btn-primary">Source</Link>
+        <FakeTerminalWindow key={index} section={project.title} size="w-[49%] my-5">
+          <div className='flex flex-col gap-2'>
+            <div className='flex justify-start flex-wrap md:justify-between'>
+              <ul className='w-[49%]'>
+                <li><img src='/hui_calligraphy_CDW_full.png' /></li>
+              </ul>
+              <ul className='w-1/2 text-right'>
+                <li>{project.s_desc}</li>
+              </ul>
+            </div>
+            <Link href={`/projects/${index}`} target='_blank' className="btn btn-primary font-semibold text-white">Learn more</Link>
           </div>
-        </div>
+        </FakeTerminalWindow>
       ))}
-      <FakeTerminalWindow section='example' size='w-5/12 my-5'>something</FakeTerminalWindow>
+      <FakeTerminalWindow section='example' size='w-[49%] my-5'>something</FakeTerminalWindow>
       <FakeTerminalWindow section='example' size='w-5/12 my-5'>something</FakeTerminalWindow>
     </div>
     </div>

@@ -4,8 +4,8 @@ const FakeTerminalWindow = ({ section, size, children }: { section: string, size
     return (
         <div className={`${size} mx-auto rounded-xl shadow-lg text-lg border border-black/20`}>
             {/* top bar */}
-            <div className="flex bg-base-200 py-2 px-4 rounded-t-xl gap-2">
-                <div className='flex flex-row'>
+            <div className="flex bg-base-200 py-2 px-4 rounded-t-xl ">
+                <div className='flex flex-row gap-2'>
                     <div className="bg-error h-4 w-4 rounded-full" />
                     <div className="bg-warning h-4 w-4 rounded-full" />
                     <div className="bg-success h-4 w-4 rounded-full" />
