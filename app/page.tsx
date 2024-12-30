@@ -5,7 +5,7 @@ const BulletPoints = () => {
   return (
     <ul className="space-y-1 text-xl text-center md:text-left">
       <li>Based in Toronto, originally from Hangzhou, China </li>
-      <li>Pursuing Masters in Economics</li>
+      <li>Pursuing Master of Arts in Economic Data Analytics at University of Toronto</li>
       <li><a href="mailto:hui90785641@gmail.com">📧 let's get in touch!</a></li>
     </ul>
   )
@@ -35,7 +35,12 @@ export default function Home() {
       <div>
         <div className="text-center md:text-left mb-4">
           <h1 className="text-5xl">
-            Hi, I'm <span className="bg-gradient-to-tl from-indigo-500 to-fuchsia-500 text-transparent bg-clip-text font-bold">Wenhui</span><WavingHand />
+            Hi, I'm <span 
+            className="bg-gradient-to-tl from-indigo-500 to-fuchsia-500 text-transparent bg-clip-text font-bold"
+            title="short for Wenhui!">
+              Hwei 
+              </span>
+            <WavingHand />
           </h1>
           <h2 className="text-3xl">I'm a data-scientist and economist.</h2>
         </div>

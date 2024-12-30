@@ -1,10 +1,9 @@
 import FakeTerminalWindow from '../components/about/FakeTerminalWindow';
-import Prompt from '../components/about/Prompt';
-import { skills } from '../../lib/constants';
+import { skills, pages } from '../../lib/constants';
 
 const SkillList = ({ title, items }: { title: string, items: string[] }) => (
   <>
-    <li className="text-secondary font-semibold">{title}/</li>
+    <li className="text-secondary font-semibold">{title}</li>
     {items.map((item, index) => <li key={index}>{item}</li>)}
   </>
 );
@@ -14,25 +13,30 @@ const About = () => {
     <div className="space-y-10 my-10 break-words">
       {/* general bio */}
       <FakeTerminalWindow section='About me:'>
-        <p>Hello there! I'm Payton, a frontend dev <b>from Wisconsin</b>, specializing in <b>React, NextJS, and Vue</b>. I've been working professionally as a developer for about 4 years now, and I'm currently focused on learning NodeJS/Express, PostgreSQL, and Prisma. Once I feel I've become fairly proficient in my preferred stack, I plan to expand my horizons to Java, Svelte, and eventually I'll probably end up giving into the Python craze.</p>
-        <p>Outside of my coding life, I live on a little homestead with 15 chickens and a vegetable garden. My husband, two cats, and I decided to leave our small city and pursue a quieter life, and I couldn't be happier that we did! We bought a farmhouse was built in 1942 and we are working hard to learn new skills to produce our own food.</p>
+        <p>As people always say: "There is nothing new under the sun." I research the past for a thriving future. Finding a pattern from data and pulling missing pieces together always fascinates me. I enjoy telling stories with numbers and talking about the lessons learned.</p>
+        <p>I am very proud to be a student of the first course delivery of causal machine learning at UofT, lead by Dr. Nazanin Khazra. Now, I am one of the very few people in Canada that has a competent knowledge to Causal Inference in a Business/Economic setting, where Python packages like SkLearn, DoWhy, EconML and LightGBM are heavily used.  Check out the <a className='text-violet-400' href={"/"+pages.projects+"#"}>latest research</a> tab to see some interesting findings.</p>
+        <p>I have 4 years of project experience in variety of fields - Data analytics/ science, Research, Business analytics, and even in teaching! I appreciate the opportunities where I mastered skills of Python, SQL, R, Tableu, PowerBI, STATA and SAS for machine learning and visualization.</p>
+        <p>I am an interest-driven person, the thirst for knowledge drives me forward. But now a more pressing question arises. What can I do with the knowledge. If I'm just selfishly keeping them locked away in a corner of my brain, then maybe I'm no different than others who have nothing to offer in this field. I'm desperately looking for some like-minded partners, together we do somethings different.</p>
       </FakeTerminalWindow>
 
       {/* skills & tools */}
       <FakeTerminalWindow section='Skills and Tools'>
         <div className='flex justify-start flex-wrap md:justify-between'>
           <ul>
-            <SkillList title="TheObvious" items={skills.theObvious} />
-            <SkillList title="ToolsOfTheTrade" items={skills.toolsOfTheTrade} />
+            <SkillList title="Programming Languages" items={skills.theObvious} /><br/>
+            <SkillList title="Tools" items={skills.toolsOfTheTrade} />
+          </ul>
+          <ul className='md:text-center'>
+            <SkillList title="Models & Frameworks" items={skills.models} />
           </ul>
           <ul className="md:text-right">
-            <SkillList title="LibrariesAndFrameworks" items={skills.librariesFrameworks} />
+            <SkillList title="Libraries" items={skills.librariesFrameworks} />
           </ul>
         </div>
       </FakeTerminalWindow>
 
       {/* hobbies / interests */}
-      <FakeTerminalWindow section='Hobbies and Interests'>
+      <FakeTerminalWindow section='Interests and Hobbies'>
         <ul>
           <li>📚 reading</li>
           <li>🎬 movies</li>

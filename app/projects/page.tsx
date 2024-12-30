@@ -1,5 +1,7 @@
-import Link from 'next/link'
-import React from 'react'
+import Link from 'next/link';
+import React from 'react';
+import Preview from '../components/projects/Preview';
+import Project from '../components/projects/Project';
 
 const projects = [
   {
@@ -44,6 +46,7 @@ const Portfolio = () => {
           </div>
         </div>
       ))}
+      <Preview p={new Project("example", "something", "a lot more things")} />
     </div>
     </div>
   )

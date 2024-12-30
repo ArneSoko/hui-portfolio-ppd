@@ -1,22 +1,38 @@
 import Link from 'next/link'
 import DarkModeToggle from '../DarkModeToggle'
 import MobileNavDropdown from './MobileNavDropdown'
+import { pages } from '@/lib/constants'
 
 const Logo = ({ className }: { className?: string }) => {
   return (
-    <img alt="logo" src="/p2logo.png" className={`w-20 ${className}`} />
+    <svg className='w-20 h-20'>
+        <circle r={30} fill='#7730B0' cx={50+'%'} cy={50+'%'}/>
+      <text 
+        fill={'#ffffff'}
+        fontFamily={"Noto Serif CJK SC"} 
+        fontSize={30} 
+        fontStyle={"italic"} 
+        strokeWidth={0} 
+        textAnchor={'middle'}
+        dominantBaseline={'middle'}
+        x={46+'%'}
+        y={50+'%'}
+        >
+          蕙
+        </text>
+    </svg>
   )
 }
 
 export const navLinks = [
   {
     label: 'about',
-    href: '/about',
+    href: "/"+pages.about,
     mobile: true
   },
   {
-    label: 'portfolio',
-    href: '/portfolio',
+    label: 'projects',
+    href: '/'+pages.projects,
     mobile: true
   },
   {
@@ -25,8 +41,8 @@ export const navLinks = [
     mobile: false
   },
   {
-    label: 'blog',
-    href: '/blog',
+    label: 'latest research',
+    href: '/'+pages.projects+"#",
     mobile: true
   }
 ]
@@ -46,7 +62,6 @@ const Navbar = () => {
         </ul>
         {/* mobile */}
         <MobileNavDropdown />
-        <Link href="/"><Logo className="md:hidden" /></Link>
         <div className="md:hidden">
           <DarkModeToggle />
         </div>

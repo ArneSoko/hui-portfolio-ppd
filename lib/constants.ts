@@ -1,31 +1,35 @@
 export const skills = {
     theObvious: [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "git",
-      "npm / yarn",
-      "Rest APIs / JSON",
-      "React Hooks",
-      "fetch / axios"
+      "Python",
+      "R",
+      "SAS",
+      "SQL",
+      "STATA",
+      "Tableau",
+      "PowerBI"
     ],
     librariesFrameworks: [
-      "React 18",
-      "Vue 3",
-      "NextJS 14",
-      "Tailwind",
-      "MaterialUI",
-      "Ant Design",
-      "DaisyUI",
-      "Cypress",
-      "Jest",
-      "Redux",
-      "VueX"
+      "SkLearn",
+      "DoWhy",
+      "EconML",
+      "LightGBM",
+      "Grf",
+      "dplyr",
+      "ggplot2",
+      "xgboost",
+      "randomForest"
     ],
     toolsOfTheTrade: [
       "Github",
-      "Jira / Bitbucket",
-      "Strapi",
-      "Supabase"
+      "Excel"
+    ],
+    models: [
+      "Causal Forest"
     ]
   };
+
+  export const pages = {
+    about: "about",
+    projects: "projects",
+    home: ""
+  }
