@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
+import FakeTerminalWindow from '../components/about/FakeTerminalWindow';
 import Preview from '../components/projects/Preview';
 import Project from '../components/projects/Project';
 
@@ -46,7 +47,8 @@ const Portfolio = () => {
           </div>
         </div>
       ))}
-      <Preview p={new Project("example", "something", "a lot more things")} />
+      <FakeTerminalWindow section='example' size='w-5/12 my-5'>something</FakeTerminalWindow>
+      <FakeTerminalWindow section='example' size='w-5/12 my-5'>something</FakeTerminalWindow>
     </div>
     </div>
   )

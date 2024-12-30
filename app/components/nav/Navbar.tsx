@@ -5,22 +5,7 @@ import { pages } from '@/lib/constants'
 
 const Logo = ({ className }: { className?: string }) => {
   return (
-    <svg className='w-20 h-20'>
-        <circle r={30} fill='#7730B0' cx={50+'%'} cy={50+'%'}/>
-      <text 
-        fill={'#ffffff'}
-        fontFamily={"Noto Serif CJK SC"} 
-        fontSize={30} 
-        fontStyle={"italic"} 
-        strokeWidth={0} 
-        textAnchor={'middle'}
-        dominantBaseline={'middle'}
-        x={46+'%'}
-        y={50+'%'}
-        >
-          蕙
-        </text>
-    </svg>
+    <img className={`w-20 rounded-3xl ${className}`} src='/hui_calligraphy_CDW_logo.png' />
   )
 }
 

@@ -24,7 +24,18 @@ export const skills = {
       "Excel"
     ],
     models: [
-      "Causal Forest"
+      "Regression Tree",
+      "Classification",
+      "Random Foresting",
+      "Boosting, Bagging",
+      "Double Machine Learning",
+      "Quantile Regression",
+      "CNN, GMM, MLE",
+      "Panel Data",
+      "Time Series",
+      "Dynamic Panel Data",
+      "ARMA, NNAR",
+      "VAR, VEC"
     ]
   };
 

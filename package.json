@@ -1,8 +1,7 @@
 {
-  "name": "paytonpierce.dev",
+  "name": "hui-portfolio-ppd",
   "version": "0.1.0",
   "private": true,
-  "homepage": "paytonpierce.dev",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
