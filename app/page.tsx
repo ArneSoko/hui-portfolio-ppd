@@ -36,7 +36,7 @@ export default function Home() {
         <div className="text-center md:text-left mb-4">
           <h1 className="text-5xl">
             Hi, I'm <span 
-            className="bg-gradient-to-tl from-indigo-500 to-fuchsia-500 text-transparent bg-clip-text font-bold"
+            className="bg-gradient-to-tl from-primary to-secondary text-transparent bg-clip-text font-bold"
             title="short for Wenhui!">
               Hwei 
               </span>

@@ -27,7 +27,22 @@ const config: Config = {
   },
   plugins: [require('daisyui'),],
   daisyui: {
-    themes: ["light", "dark"]
+    themes: [{
+      light: {
+        "primary": "#dc2626",
+        "primary-content": "#E34D12",
+        "secondary": "#e34d12",
+        "accent": "#ffa2b6",
+        "neutral": "#e34d12",
+        "base-100": "#EBE9E1",
+        "info": "#fcd34d"
+      }
+    }, {
+      dark:{
+        ...require("daisyui/src/theming/themes")["dark"],
+        "primary-content": "#7934B2"
+      }
+    }]
   }
 };
 

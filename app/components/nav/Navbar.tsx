@@ -2,12 +2,8 @@ import Link from 'next/link'
 import DarkModeToggle from '../DarkModeToggle'
 import MobileNavDropdown from './MobileNavDropdown'
 import { pages } from '@/lib/constants'
-
-const Logo = ({ className }: { className?: string }) => {
-  return (
-    <img className={`w-20 rounded-3xl ${className}`} src='/hui_calligraphy_CDW_logo.png' />
-  )
-}
+import proj from '@/public/latest-project.json'
+import Logo from './Logo'
 
 export const navLinks = [
   {
@@ -27,7 +23,7 @@ export const navLinks = [
   },
   {
     label: 'latest research',
-    href: '/'+pages.projects+"#",
+    href: `/${pages.projects}/${proj.category}/${proj.index}`,
     mobile: true
   }
 ]

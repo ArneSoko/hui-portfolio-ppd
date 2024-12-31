@@ -11,7 +11,7 @@ const FakeTerminalWindow = ({ section, size, children }: { section: string, size
                     <div className="bg-success h-4 w-4 rounded-full" />
                 </div>
                 <div className='mx-auto block text-center'>
-                    <p className='text-violet-400 -mb-2 -mt-1 font-semibold'>{section}</p>
+                    <p className='text-primary -mb-2 -mt-1 font-semibold'>{section}</p>
                 </div>
             </div>
             {/* bottom content */}
