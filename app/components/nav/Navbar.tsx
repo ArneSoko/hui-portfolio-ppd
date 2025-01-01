@@ -2,7 +2,6 @@ import Link from 'next/link'
 import DarkModeToggle from '../DarkModeToggle'
 import MobileNavDropdown from './MobileNavDropdown'
 import { pages } from '@/lib/constants'
-import proj from '@/public/latest-project.json'
 import Logo from './Logo'
 
 export const navLinks = [
@@ -22,8 +21,8 @@ export const navLinks = [
     mobile: false
   },
   {
-    label: 'latest research',
-    href: `/${pages.projects}/${proj.category}/${proj.index}`,
+    label: 'cat pictures',
+    href: `/`,
     mobile: true
   }
 ]

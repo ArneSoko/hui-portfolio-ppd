@@ -1,19 +1,18 @@
 "use client";
 import Link from 'next/link';
-import React, { useEffect, useState } from 'react';
+import React, { ReactNode, useEffect, useState } from 'react';
 import FakeTerminalWindow from '../components/about/FakeTerminalWindow';
 import projects from '@/public/projects.json'
 
-const ProjDisplay = ({desc, prev, index}: {desc: string, prev?: string, index: number}) => {
-  return(
-    <div className='flex flex-col gap-2'>
-      <div className='flex justify-start flex-wrap md:justify-between'>
-        {prev ? <ul className='w-[49%]'><li><img src={prev} /></li></ul> : null}
-        <ul className='w-1/2 text-right'>
-          <li>{desc}</li>
-        </ul>
+const ProjDisplay = ({index, title, category, children}: {index: number, title: string, category: string, children: ReactNode}) => {
+  return (
+    <div key={index} className="flex flex-col bg-white shadow-md rounded-lg p-6 w-[338px] min-h-[640px] max-h-[640px] text-center mb-4">
+      <div className="text-yellow-500 text-l mb-4">
+        <img src={`/${category}/${index}_img.png`} alt={`Preview for ${title}`}  className='mb-10 mx-auto w-1/2'/>
       </div>
-      <Link href={`/projects/${index}`} target='_blank' className="btn btn-primary font-semibold text-white">Learn more</Link>
+      <h3 className="text-xl font-semibold mb-4">{title}</h3>
+      <div className="text-gray-600 mb-auto overflow-hidden">{children}</div>
+      <Link href={`/projects/${category}/${index}`} className="btn btn-bg-yellow-500 text-white px-4 py-2 rounded-md hover:bg-yellow-600 w-full self-stretch">See More</Link>
     </div>
   );
 }
@@ -34,34 +33,48 @@ const Portfolio = () => {
     <div className="text-center">
       <div className="flex flex-grow items-start w-[1024px] min-h-[406px] mb-10">
       {cat === 0 ?
-        <div className='flex justify-start w-full h-[400px] md:justify-around'>
-          <ul className='flex flex-col justify-around w-1/2'>
-            <li><button onClick={()=>{setCat(1)}} className={catButtons}>Economic Research</button></li>
-            <li><button onClick={()=>{setCat(2)}} className={catButtons}>Business Analytics</button></li>
-          </ul>
-          <ul className='flex flex-col justify-around w-1/2'>
-            <li><button onClick={()=>{setCat(3)}} className={catButtons}>Financial Research</button></li>
-            <li><button onClick={()=>{setCat(4)}} className={catButtons}>Cat Photos</button></li>
-          </ul>
+      <div className='flex flex-row justify-start w-full md:justify-around gap-6'>
+        <div className="bg-white shadow-md rounded-lg p-6 w-72 text-center" >
+          <div className="text-yellow-500 text-5xl mb-4">
+            <span role="img" aria-label="icon">🌟</span>
+          </div>
+          <h3 className="text-xl font-semibold mb-4">Economic Research</h3>
+          <button onClick={()=>{setCat(1)}} className="bg-yellow-500 text-white px-4 py-2 rounded-md hover:bg-yellow-600">Check projects</button>
         </div>
+        <div className="bg-white shadow-md rounded-lg p-6 w-72 text-center" >
+          <div className="text-yellow-500 text-5xl mb-4">
+            <span role="img" aria-label="icon">🌟</span>
+          </div>
+          <h3 className="text-xl font-semibold mb-4">Business Analytics</h3>
+          <button onClick={()=>{setCat(2)}} className="bg-yellow-500 text-white px-4 py-2 rounded-md hover:bg-yellow-600">Check projects</button>
+        </div>
+        <div className="bg-white shadow-md rounded-lg p-6 w-72 text-center" >
+          <div className="text-yellow-500 text-5xl mb-4">
+            <span role="img" aria-label="icon">🌟</span>
+          </div>
+          <h3 className="text-xl font-semibold mb-4">Financial Research</h3>
+          <button onClick={()=>{setCat(3)}} className="bg-yellow-500 text-white px-4 py-2 rounded-md hover:bg-yellow-600">Check projects</button>
+        </div>
+        <div className="bg-white shadow-md rounded-lg p-6 w-72 text-center" >
+          <div className="text-yellow-500 text-5xl mb-4">
+            <span role="img" aria-label="icon">🌟</span>
+          </div>
+          <h3 className="text-xl font-semibold mb-4">Cat photos</h3>
+          <button onClick={()=>{setCat(4)}} className="bg-yellow-500 text-white px-4 py-2 rounded-md hover:bg-yellow-600">Check photos</button>
+        </div>
+      </div>
+      
       :
-      <div className="flex flex-col items-start mb-10">
+      <div className="flex flex-col items-start mb-10 w-full">
       <div className='flex flex-row w-full bg-base-200 md:bg-base-100 sticky top-32 pb-1'>
         <button className='btn btn-secondary relative left-0' onClick={()=>{setCat(0);}}>Return</button>
         <h2 className='text-white bg-gradient-to-tl from-primary to-secondary font-semibold text-3xl mx-auto my-auto p-3 rounded-xl'>{catNames[cat-1]}</h2>
       </div>
-      <div className="flex flex-wrap items-start mb-10">
+      <div className='flex flex-row flex-wrap content-stretch w-full items-start justify-center gap-1 justify-items-stretch'>
       {projects[cats[cat] as keyof typeof projects].map((project, index) => (
-        <FakeTerminalWindow key={index} section={project.title} size="w-[49.5%] my-5">
-          <div className='flex flex-col gap-2'>
-            <div className='flex justify-start flex-grow md:justify-between'>
-              <ul className=''>
-                <li>{project.s_desc}</li>
-              </ul>
-            </div>
-            <Link href={`/projects/${cats[cat]}/${index}`} target='_blank' className="btn btn-primary font-semibold text-white">Learn more</Link>
-          </div>
-        </FakeTerminalWindow>
+        <ProjDisplay title={project.title} category={cats[cat]} key={index} index={index}>
+          {project.s_desc}
+        </ProjDisplay>
       ))}</div></div>}
     </div>
     </div>
