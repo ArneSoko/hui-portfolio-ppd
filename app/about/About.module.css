@@ -1,0 +1,116 @@
+.box {
+    margin: 15px;
+    margin-top: 40px;
+  }
+  .About {
+    margin-left: 20px;
+    padding: 20px;
+  }
+  
+  .br {
+    margin-top: 20px;
+  }
+  
+  .head {
+    display: inline-block;
+    padding: 0px 12px;
+    color: rgb(85, 85, 85);
+    margin-bottom: 20px;
+    margin-left: 30px;
+    letter-spacing: 5px;
+    font-size: 11px;
+  }
+  
+  .heading {
+    padding: 0px 12px;
+    font-size: 18px;
+    font-weight: 700;
+    margin-left: 30px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    line-height: 1.8;
+  }
+  .link {
+    color: #333333;
+  }
+
+  .web{
+    height: 100%;
+    /* height:180px; */
+   border:1px  black;
+   border-bottom:2px solid #2c98f0;
+   text-align: center;
+   padding:1.2rem;
+   box-shadow:  10px 10px 20px rgba(244, 241, 241, 0.8) ;
+    
+}
+.app{
+        /* height:180px; */
+    height: 100%;
+    border:1px  black;
+   border-bottom:2px solid #f9bf3f ;
+   text-align: center;
+   box-shadow: 10px 10px 20px rgba(244,241,241,1) ;
+    position: relative;
+    top:-20px;
+    padding:1.2rem;
+}
+.other{
+    height: 100%;
+    /* height:180px; */
+   border:1px  black;
+   padding:1.2rem;
+   border-bottom:2px solid #2fa499;
+   text-align: center;
+   box-shadow: 10px 10px 20px rgba(244,241,241,1) ;
+
+   
+}
+
+.Interest {
+    /* background-color:rgba(220, 220,220, 0.3); */
+    border-radius:3px;
+    margin-left:20px;
+    margin-top:45px;
+    padding:20px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    column-gap: 20px; 
+}
+
+.app h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ff3300; /* A green color for the heading */
+  text-transform: uppercase;
+  margin-bottom: 15px; /* Spacing below the heading */
+}
+
+.web h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ff3300; /* A green color for the heading */
+  text-transform: uppercase;
+  margin-bottom: 15px; /* Spacing below the heading */
+}
+
+.other h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ff3300; /* A green color for the heading */
+  text-transform: uppercase;
+  margin-bottom: 15px; /* Spacing below the heading */
+}
+
+  @keyframes text {
+    from {
+      transform: translateX(-30px);
+      opacity: 0.5;
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .box {
+      text-align: center;
+    }
+  }

@@ -42,5 +42,6 @@ export const skills = {
   export const pages = {
     about: "about",
     projects: "projects",
+    cats: "cats",
     home: ""
   }

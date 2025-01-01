@@ -1,84 +1,114 @@
 "use client";
-import Link from 'next/link';
-import React, { ReactNode, useEffect, useState } from 'react';
-import FakeTerminalWindow from '../components/about/FakeTerminalWindow';
-import projects from '@/public/projects.json'
 
-const ProjDisplay = ({index, title, category, children}: {index: number, title: string, category: string, children: ReactNode}) => {
-  return (
-    <div key={index} className="flex flex-col bg-white shadow-md rounded-lg p-6 w-[338px] min-h-[640px] max-h-[640px] text-center mb-4">
-      <div className="text-yellow-500 text-l mb-4">
-        <img src={`/${category}/${index}_img.png`} alt={`Preview for ${title}`}  className='mb-10 mx-auto w-1/2'/>
-      </div>
-      <h3 className="text-xl font-semibold mb-4">{title}</h3>
-      <div className="text-gray-600 mb-auto overflow-hidden">{children}</div>
-      <Link href={`/projects/${category}/${index}`} className="btn btn-bg-yellow-500 text-white px-4 py-2 rounded-md hover:bg-yellow-600 w-full self-stretch">See More</Link>
+import Link from "next/link";
+import React, { ReactNode, useEffect, useState } from "react";
+import projects from "@/public/projects.json";
+
+const ProjDisplay = ({
+  index,
+  title,
+  category,
+}: {
+  index: number;
+  title: string;
+  category: string;
+}) => (
+  <Link
+    href={`/projects/${category}/${index}`}
+    className="flex flex-col bg-white shadow-md rounded-lg p-4 w-[280px] h-[400px] text-center mb-6 transition-transform transform hover:shadow-lg hover:scale-105 hover:-translate-y-2 cursor-pointer"
+  >
+    {/* Image Section */}
+    <div className="flex justify-center items-center mb-4 h-[150px]">
+      <img
+        src={`/${category}/${index}_img.png`}
+        alt={`Preview for ${title}`}
+        className="w-3/4 h-auto max-h-full object-contain"
+      />
     </div>
-  );
-}
+
+    {/* Title */}
+    <h3 className="text-lg font-semibold mb-4">{title}</h3>
+  </Link>
+);
 
 const Portfolio = () => {
   const [cat, setCat] = useState(0);
-  const cats = ["Main", ...Object.keys(projects)]
-  const catNames = ['Economic Research', 'Business Analytics', 'Financial Research', 'Cat Photos']
-  const catButtons = 'btn btn-neutral text-2xl w-1/2 h-full'
+  const cats = ["Main", ...Object.keys(projects)];
+  const catNames = ["Economic Research", "Business Analytics", "Financial Research"];
+  const buttonStyles =
+    "bg-gradient-to-tl from-primary to-secondary text-white px-4 py-2 rounded-md hover:opacity-80";
 
-  useEffect(()=>{
+  useEffect(() => {
     console.log(cats);
-  },[])
-
-  projects[cats[cat] as keyof typeof projects]
+  }, []);
 
   return (
-    <div className="text-center">
-      <div className="flex flex-grow items-start w-[1024px] min-h-[406px] mb-10">
-      {cat === 0 ?
-      <div className='flex flex-row justify-start w-full md:justify-around gap-6'>
-        <div className="bg-white shadow-md rounded-lg p-6 w-72 text-center" >
-          <div className="text-yellow-500 text-5xl mb-4">
-            <span role="img" aria-label="icon">🌟</span>
+    <div
+      className="relative"
+      style={{
+        maxHeight: "calc(100vh - 64px)", // Adjust height to account for existing navbar
+      }}
+    >
+      {/* Portfolio Section */}
+      <div className="pt-16">
+        {cat === 0 ? (
+          <div className="flex flex-row justify-start w-full md:justify-around gap-8 px-8">
+            {catNames.map((name, idx) => (
+              <div
+                key={idx}
+                className="bg-white shadow-md rounded-lg p-6 w-72 text-center transition-transform transform hover:shadow-lg hover:scale-105 hover:-translate-y-2 cursor-pointer"
+                style={{ willChange: "transform" }}
+                onClick={() => setCat(idx + 1)} // Navigate to the next layer on click
+              >
+                <div className="text-yellow-500 text-5xl mb-4">
+                  <span role="img" aria-label="icon">
+                    🌟
+                  </span>
+                </div>
+                <h3 className="text-xl font-semibold mb-4">{name}</h3>
+              </div>
+            ))}
           </div>
-          <h3 className="text-xl font-semibold mb-4">Economic Research</h3>
-          <button onClick={()=>{setCat(1)}} className="bg-yellow-500 text-white px-4 py-2 rounded-md hover:bg-yellow-600">Check projects</button>
-        </div>
-        <div className="bg-white shadow-md rounded-lg p-6 w-72 text-center" >
-          <div className="text-yellow-500 text-5xl mb-4">
-            <span role="img" aria-label="icon">🌟</span>
-          </div>
-          <h3 className="text-xl font-semibold mb-4">Business Analytics</h3>
-          <button onClick={()=>{setCat(2)}} className="bg-yellow-500 text-white px-4 py-2 rounded-md hover:bg-yellow-600">Check projects</button>
-        </div>
-        <div className="bg-white shadow-md rounded-lg p-6 w-72 text-center" >
-          <div className="text-yellow-500 text-5xl mb-4">
-            <span role="img" aria-label="icon">🌟</span>
-          </div>
-          <h3 className="text-xl font-semibold mb-4">Financial Research</h3>
-          <button onClick={()=>{setCat(3)}} className="bg-yellow-500 text-white px-4 py-2 rounded-md hover:bg-yellow-600">Check projects</button>
-        </div>
-        <div className="bg-white shadow-md rounded-lg p-6 w-72 text-center" >
-          <div className="text-yellow-500 text-5xl mb-4">
-            <span role="img" aria-label="icon">🌟</span>
-          </div>
-          <h3 className="text-xl font-semibold mb-4">Cat photos</h3>
-          <button onClick={()=>{setCat(4)}} className="bg-yellow-500 text-white px-4 py-2 rounded-md hover:bg-yellow-600">Check photos</button>
-        </div>
-      </div>
-      
-      :
-      <div className="flex flex-col items-start mb-10 w-full">
-      <div className='flex flex-row w-full bg-base-200 md:bg-base-100 sticky top-32 pb-1'>
-        <button className='btn btn-secondary relative left-0' onClick={()=>{setCat(0);}}>Return</button>
-        <h2 className='text-white bg-gradient-to-tl from-primary to-secondary font-semibold text-3xl mx-auto my-auto p-3 rounded-xl'>{catNames[cat-1]}</h2>
-      </div>
-      <div className='flex flex-row flex-wrap content-stretch w-full items-start justify-center gap-1 justify-items-stretch'>
-      {projects[cats[cat] as keyof typeof projects].map((project, index) => (
-        <ProjDisplay title={project.title} category={cats[cat]} key={index} index={index}>
-          {project.s_desc}
-        </ProjDisplay>
-      ))}</div></div>}
-    </div>
-    </div>
-  )
-}
+        ) : (
+          <div className="flex flex-col items-start mb-10 w-full">
+            {/* Header */}
+            <div className="flex flex-row w-full bg-base-200 md:bg-base-100 pb-1 mb-6">
+              <h2 className="bg-gradient-to-tl from-primary to-secondary text-transparent bg-clip-text font-extrabold tracking-wide uppercase text-3xl mx-auto my-auto p-3 hover:opacity-80 focus:outline-none">
+                {catNames[cat - 1]}
+              </h2>
+            </div>
 
-export default Portfolio
+            {/* Scrollable Cards */}
+            <div
+              className="flex flex-wrap content-stretch w-full items-start justify-center gap-6 px-8"
+              style={{
+                paddingTop: "20px", // Space under the header
+              }}
+            >
+              {projects[cats[cat] as keyof typeof projects].map((project, index) => (
+                <ProjDisplay
+                  key={index}
+                  title={project.title}
+                  category={cats[cat]}
+                  index={index}
+                />
+              ))}
+            </div>
+
+            {/* Back Button */}
+            <div className="flex justify-center mt-10 w-full">
+              <button
+                onClick={() => setCat(0)}
+                className="bg-gradient-to-tl from-primary to-secondary text-white px-4 py-2 rounded-md hover:opacity-80"
+              >
+                Back
+              </button>
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default Portfolio;

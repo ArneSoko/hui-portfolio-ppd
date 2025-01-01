@@ -4,7 +4,7 @@ import "./globals.css";
 import Navbar from "./components/nav/Navbar";
 import Footer from "./components/Footer";
 import { ThemeProvider } from "next-themes";
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from "@vercel/analytics/react";
 
 const nunito = Nunito({ subsets: ["latin"] });
 
@@ -22,10 +22,19 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${nunito.className} transition-colors duration-100`}>
         <ThemeProvider themes={["light", "dark"]} defaultTheme="system">
-          <div className="max-w-screen-lg min-h-screen mx-auto flex flex-col justify-center items-center">
+          <div className="max-w-screen-lg mx-auto flex flex-col min-h-screen">
+            {/* Navbar */}
             <Navbar />
-            <main className="flex-grow flex flex-col justify-center items-center">{children}</main>
-            <Footer />
+
+            {/* Main Content */}
+            <main className="flex-grow mt-16">
+              <div className="flex flex-col justify-center items-center h-full">{children}</div>
+            </main>
+
+            {/* Footer
+            <Footer /> */}
+
+            {/* Analytics */}
             <Analytics />
           </div>
         </ThemeProvider>
