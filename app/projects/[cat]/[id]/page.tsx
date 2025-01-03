@@ -1,11 +1,10 @@
-"use client";
-
 import React from 'react';
 import Link from 'next/link';
 import projects from '@/public/projects.json';
 
-const PortfolioDetail = ({ params }: { params: { cat: string; id: number } }) => {
-  const { cat, id } = params;
+
+const PortfolioDetail = async ({ params }: { params: Promise<{ cat: string; id: number }> }) => {
+  const { cat, id } = await params;
   const ent = projects[cat as keyof typeof projects][id];
 
   return (
