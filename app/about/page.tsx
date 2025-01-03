@@ -119,7 +119,11 @@ const CombinedPage = () => {
 
     {/* Animals Section */}
     <div className="bg-base-100 p-4 rounded-lg shadow-lg text-center w-60 flex-none">
+<<<<<<< HEAD
       <h3 className="text-2xl font-semibold text-[#ff3300] mb-4">Cats 🐱</h3>
+=======
+      <h3 className="text-2xl font-semibold text-gray-800 mb-4">Cats 🐱</h3>
+>>>>>>> 570df8dafb9526c3a0579198699d70d2346fac74
       <p> I love cats! I currently live with 3 cats: 1 boy and 2 girls. The boy is the black one in <Link href='/cats' className="text-secondary" locale={false}>Cat Pictures</Link>.</p>
     </div>
 
