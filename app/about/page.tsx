@@ -120,7 +120,7 @@ const CombinedPage = () => {
     {/* Animals Section */}
     <div className="bg-base-100 p-4 rounded-lg shadow-lg text-center w-60 flex-none">
       <h3 className="text-2xl font-semibold text-gray-800 mb-4">Cats 🐱</h3>
-      <p> I love cats! I currently live with 3 cats: 1 boy and 2 girls. The boy is the black one in the <Link href='/cats' className="text-secondary" locale={false}>Cat Pictures</Link> section.</p>
+      <p> I love cats! I currently live with 3 cats: 1 boy and 2 girls. The boy is the black one in <Link href='/cats' className="text-secondary" locale={false}>Cat Pictures</Link>.</p>
     </div>
 
     {/* Crochet Section */}
