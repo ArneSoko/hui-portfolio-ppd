@@ -101,37 +101,37 @@ const CombinedPage = () => {
   <div className="flex gap-6">
     {/* Reading Section */}
     <div className="bg-base-100 p-4 rounded-lg shadow-lg text-center w-60 flex-none"> 
-      <h3 className="text-2xl font-semibold text-gray-800 mb-4">Reading 📚</h3>
+      <h3 className="text-2xl font-semibold text-[#ff3300] mb-4">Reading 📚</h3>
       <p> I enjoy reading fiction books. I love exploring new ideas and gaining insights from different perspectives. My favourite genre is cosmic horror.</p>
     </div>
 
     {/* Movies Section */}
     <div className="bg-base-100 p-4 rounded-lg shadow-lg text-center w-60 flex-none">
-      <h3 className="text-2xl font-semibold text-gray-800 mb-4">Movies 🎬</h3>
+      <h3 className="text-2xl font-semibold text-[#ff3300] mb-4">Movies 🎬</h3>
       <p>Watching movies is one of my favorite pastimes. I was recently blown away by the Chinese film 'HerStory'.</p>
     </div>
 
     {/* Gardening Section */}
     <div className="bg-base-100 p-4 rounded-lg shadow-lg text-center w-60 flex-none">
-      <h3 className="text-2xl font-semibold text-gray-800 mb-4">City-walks 🚶‍♀️</h3>
+      <h3 className="text-2xl font-semibold text-[#ff3300] mb-4">City-walks 🚶‍♀️</h3>
       <p>I find walking in a city relaxing and rewarding. All the lights and the people remind me of home.</p>
     </div>
 
     {/* Animals Section */}
     <div className="bg-base-100 p-4 rounded-lg shadow-lg text-center w-60 flex-none">
-      <h3 className="text-2xl font-semibold text-gray-800 mb-4">Cats 🐱</h3>
-      <p> I love cats! I currently live with 3 cats: 1 boy and 2 girls. The boy is the black one in the <Link href='/cats' className="text-secondary" locale={false}>Cat Pictures</Link> section.</p>
+      <h3 className="text-2xl font-semibold text-[#ff3300] mb-4">Cats 🐱</h3>
+      <p> I love cats! I currently live with 3 cats: 1 boy and 2 girls. The boy is the black one in <Link href='/cats' className="text-secondary" locale={false}>Cat Pictures</Link>.</p>
     </div>
 
     {/* Crochet Section */}
     <div className="bg-base-100 p-4 rounded-lg shadow-lg text-center w-60 flex-none">
-      <h3 className="text-2xl font-semibold text-gray-800 mb-4">Exercise 💪</h3>
+      <h3 className="text-2xl font-semibold text-[#ff3300] mb-4">Exercise 💪</h3>
       <p> I love working out! I want to have big muscles to show off, and to lift heavy things for my friends.</p>
     </div>
 
     {/* Cooking Section */}
     <div className="bg-base-100 p-4 rounded-lg shadow-lg text-center w-60 flex-none">
-      <h3 className="text-2xl font-semibold text-gray-800 mb-4">Cooking 🍳</h3>
+      <h3 className="text-2xl font-semibold text-[#ff3300] mb-4">Cooking 🍳</h3>
       <p> Cooking is one of my favorite activities. I enjoy creating delicious meals for friends and family. I am also a master with my wok!</p>
     </div>
   </div>

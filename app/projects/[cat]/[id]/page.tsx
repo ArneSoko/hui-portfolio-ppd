@@ -46,13 +46,13 @@ const PortfolioDetail = async ({ params }: { params: Promise<{ cat: string; id: 
 
       {/* Back Button */}
       <div className="flex justify-center w-full mt-10">
-        <button
-          onClick={() => window.history.back()} // Navigates back to the previous page
+        <Link
+          href={'/projects'}
           className="bg-gradient-to-tl from-primary to-secondary text-white px-4 py-2 rounded-md hover:opacity-80"
           style={{ width: '100px' }}
         >
           Back
-        </button>
+        </Link>
       </div>
     </div>
   );
