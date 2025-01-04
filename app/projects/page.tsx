@@ -8,14 +8,16 @@ const ProjDisplay = ({
   index,
   title,
   category,
+  s_desc
 }: {
   index: number;
   title: string;
   category: string;
+  s_desc: string;
 }) => (
   <Link
     href={`/projects/${category}/${index}`}
-    className="flex flex-col bg-white shadow-md rounded-lg p-4 w-[280px] h-[400px] text-center mb-6 transition-transform transform hover:shadow-lg hover:scale-105 hover:-translate-y-2 cursor-pointer"
+    className="flex flex-col bg-white shadow-md overflow-clip rounded-lg p-4 w-[280px] h-[400px] text-center mb-6 transition-transform transform hover:shadow-lg hover:scale-105 hover:-translate-y-2 cursor-pointer"
   >
     {/* Image Section */}
     <div className="flex justify-center items-center mb-4 h-[150px]">
@@ -28,6 +30,7 @@ const ProjDisplay = ({
 
     {/* Title */}
     <h3 className="text-lg font-semibold mb-4">{title}</h3>
+    <p className="text-sm text-gray-800 self-end">{s_desc}</p>
   </Link>
 );
 
@@ -91,6 +94,7 @@ const Portfolio = () => {
                   title={project.title}
                   category={cats[cat]}
                   index={index}
+                  s_desc={project.s_desc}
                 />
               ))}
             </div>

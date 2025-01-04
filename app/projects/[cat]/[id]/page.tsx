@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image'
 import projects from '@/public/projects.json';
 
 
@@ -19,11 +20,11 @@ const PortfolioDetail = async ({ params }: { params: Promise<{ cat: string; id: 
       {/* Content Section */}
       <div className="flex flex-wrap gap-2 w-full items-start my-10">
         {/* Image and Details Link */}
-        <div className="flex flex-col flex-shrink justify-between items-center w-[49%]">
+        <div className="flex flex-col flex-shrink justify-between items-center w-1/3">
           <img
             src={`/${cat}/${id}_img.png`}
             alt={`Preview for ${ent.title}`}
-            className="mb-10 mx-auto w-1/2"
+            className="mb-10 mx-auto w-2/3"
           />
           {ent.link !== undefined ? (
             <Link
@@ -31,7 +32,7 @@ const PortfolioDetail = async ({ params }: { params: Promise<{ cat: string; id: 
               locale={false}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-primary font-bold text-lg underline  hover:decoration-solid hover:text-secondary transition duration-300"
+              className="text-primary font-bold text-lg underline hover:decoration-solid hover:text-secondary transition duration-300"
             >
               📖 Explore Details
             </Link>
@@ -39,7 +40,7 @@ const PortfolioDetail = async ({ params }: { params: Promise<{ cat: string; id: 
         </div>
 
         {/* Description Section */}
-        <div className="flex flex-col w-[49%] text-justify">
+        <div className="flex flex-col w-3/5 text-justify whitespace-pre-line">
           {ent.l_desc !== undefined ? ent.l_desc : ent.s_desc}
         </div>
       </div>
