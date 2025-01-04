@@ -1,7 +1,7 @@
 # syntax=docker.io/docker/dockerfile:1
 # Based on the NextJS Docker example
 
-FROM node:18-alpine AS base
+FROM node:20-alpine AS base
 
 FROM base AS deps
 RUN apk add --no-cache libc6-compat

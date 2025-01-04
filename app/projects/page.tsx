@@ -55,7 +55,7 @@ const Portfolio = () => {
       {/* Portfolio Section */}
       <div className="pt-16">
         {cat === 0 ? (
-          <div className="flex flex-row justify-start w-full md:justify-around gap-8 px-8">
+          <div className="flex flex-col md:flex-row justify-start w-full md:justify-around gap-8 px-8">
             {catNames.map((name, idx) => (
               <div
                 key={idx}

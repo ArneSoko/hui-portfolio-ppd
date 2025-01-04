@@ -1,6 +1,6 @@
 .box {
     margin: 15px;
-    margin-top: 40px;
+    margin-top: 20px;
   }
   .About {
     margin-left: 20px;
@@ -109,8 +109,30 @@
     }
   }
   
-  @media (max-width: 992px) {
+  @media (max-width: 768px) {
     .box {
       text-align: center;
+      width: 100vw;
+    }
+    .heading {
+      margin-left: 3rem;
+      margin-right: 3rem;
+    }
+    .Interest{
+      margin-left: -1rem;
+      column-gap: 10px;
+      width: 100vw;
+    }
+    .web{
+      padding: 0.8rem;
+      box-shadow:  4px 4px 8px rgba(244, 241, 241, 0.8);
+    }
+    .app{
+      padding: 0.8rem;
+      box-shadow:  4px 4px 8px rgba(244, 241, 241, 0.8);
+    }
+    .other{
+      padding: 0.8rem;
+      box-shadow:  4px 4px 8px rgba(244, 241, 241, 0.8);
     }
   }
