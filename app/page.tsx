@@ -30,6 +30,8 @@ const socials = [
 
 export default function Home() {
   return (
+    <div className="flex flex-col">
+      <img className="h-40 w-40 mx-auto -mt-10 mb-10 rounded-full" src="/pfp.jpg" />
     <div className="flex flex-col md:flex-row justify-center items-center gap-10 md:gap-20">
       {/* little bio */}
       <div>
@@ -48,11 +50,12 @@ export default function Home() {
         {/* socials */}
         
       </div>
-      <ul className="flex flex-col text-3xl gap-10 mt-4">
+      <ul className="flex flex-row md:flex-col text-3xl gap-10 mt-4">
         {socials.map((social, index) => (
           <li key={index} className="hover:scale-125 hover:text-white transition-all ease-in-out"><Link href={social.href} target="_blank">{social.icon}</Link></li>
         ))}
       </ul>
+    </div>
     </div>
   );
 }
